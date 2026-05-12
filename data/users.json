@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "email": "superadmin@medsystem.com",
+    "password": "$2b$10$krwcwmbfmMlicWF.708KAeKpwrrDTP7GnRULNqB.RISWTOVDR/GQK"
+  },
+  {
+    "id": 2,
+    "email": "s@medsystem.com",
+    "password": "$2b$10$NGIx77I.PRrXsirmMTtQcOXhBnuGWrCNqb9l6K3sO3mE7mg0gSrH."
+  },
+  {
+    "id": 3,
+    "email": "a",
+    "password": "$2b$10$rDSpY8h77E5zRJO3s0gPLOdkwp2JPaT8e08ZBgATTGWyEuZOuBdi2"
+  },
+  {
+    "id": 4,
+    "email": "ucef",
+    "password": "$2b$10$xOhbb0Wk5FWGBcJ3LuGHIOJ2lDByLmcT5L4V3B5Ku//FTOZKoTudq"
+  },
+  {
+    "id": 5,
+    "email": "Ilyasabla09@gmail.com",
+    "password": "$2b$10$lcdZydWO386Zrr2Sm4GNSePr0EBuzq1Wee5I8xiM9ZeIpUrkq6iqu"
+  },
+  {
+    "id": 6,
+    "email": "Ilyasabla009@gmail.com",
+    "password": "$2b$10$OHUJwFYZv05ddu9r3YUld.wTL1wTXdXPDieYtyW69l4tD2iNpWP3u"
+  }
+]

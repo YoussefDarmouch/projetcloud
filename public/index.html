@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication JWT</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <h1>⚽ Football Service</h1>
+        <p class="subtitle">Login & Register Only</p>
+
+        <div class="message" id="message"></div>
+
+        <div class="form-group">
+            <label>Email :</label>
+            <input type="email" id="email" placeholder="test@email.com">
+        </div>
+
+        <div class="form-group">
+            <label>Mot de passe :</label>
+            <input type="password" id="password" placeholder="password123">
+        </div>
+
+        <button onclick="login()">SE CONNECTER</button>
+
+        <button onclick="register()" style="margin-top:10px;">
+            CREER UN COMPTE
+        </button>
+
+        <div class="token-display" id="tokenDisplay">
+            </divcl>
+
+        </div>
+
+        <script src="./login.js"></script>
+
+</body>
+
+</html>

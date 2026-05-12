@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Classement</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="joueur-page"> <!-- On garde votre classe CSS pour la mise en page -->
+        <div class="dashboard">
+
+            <h1>🏆 Formulaire Classement</h1>
+
+            <form id="classementForm" class="joueur-form">
+
+                <input type="hidden" id="classementId">
+
+                <div class="form-grid">
+                    <!-- Informations Générales -->
+                    <input type="text" id="equipe" placeholder="Nom de l'équipe (ex: RCA)" required>
+                    <input type="text" id="championnat" placeholder="Championnat (ex: Botola Pro)" required>
+
+                    <!-- Statistiques basiques -->
+                    <input type="number" id="mj" placeholder="Matchs Joués (MJ)" required>
+                    <input type="number" id="pts" placeholder="Points (Pts)" required>
+
+                    <!-- Détails des matchs -->
+                    <input type="number" id="g" placeholder="Matchs Gagnés (G)" required>
+                    <input type="number" id="n" placeholder="Matchs Nuls (N)" required>
+                    <input type="number" id="p" placeholder="Matchs Perdus (P)" required>
+
+                    <!-- Détails des buts -->
+                    <input type="number" id="bp" placeholder="Buts Pour (BP)" required>
+                    <input type="number" id="bc" placeholder="Buts Contre (BC)" required>
+                    <input type="number" id="diff" placeholder="Différence de buts (Diff)" required>
+                </div>
+
+                <button type="submit">Sauvegarder</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="./classement.js"></script>
+
+</body>
+
+</html>
