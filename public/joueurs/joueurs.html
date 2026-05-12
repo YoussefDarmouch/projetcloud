@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Joueurs Dashboard</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <h1>⚽ Joueurs Dashboard</h1>
+        <button onclick="window.location.href='formjoueur.html'">
+            Ajouter Joueur
+        </button>
+        <button onclick="getJoueurs()">Charger</button>
+
+        <input type="text" id="search" placeholder="🔍 Search..." onkeyup="searchJoueurs()">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Poste</th>
+                    <th>Club</th>
+                    <th>numero</th>
+                    <th>nationalite</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="list"></tbody>
+        </table>
+
+    </div>
+
+    <script src="./joueurs.js"></script>
+
+</body>
+
+</html>

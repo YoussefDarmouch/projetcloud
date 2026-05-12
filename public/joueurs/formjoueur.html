@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Joueur</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="joueur-page">
+        <div class="dashboard">
+
+            <h1>⚽ Joueur Form</h1>
+
+            <form id="joueurForm" class="joueur-form">
+
+                <input type="hidden" id="joueurId">
+
+                <div class="form-grid">
+
+                    <input type="text" id="nom" placeholder="Nom" required>
+                    <input type="number" id="age" placeholder="Age" required>
+
+                    <input type="text" id="position" placeholder="Position" required>
+                    <input type="text" id="club" placeholder="Club" required>
+
+                    <input type="number" id="numero" placeholder="Numero" required>
+                    <input type="text" id="nationalite" placeholder="Nationalite" required>
+
+                </div>
+
+                <button type="submit">Save Joueur</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="./joueurs.js"></script>
+
+</body>
+
+</html>

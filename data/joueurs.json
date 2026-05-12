@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "nom": "Marc-André ter Stegen",
+    "age": 33,
+    "position": "Gardien",
+    "club": "FC Barcelona",
+    "nationalite": "Allemagne",
+    "numero": 1
+  },
+  {
+    "id": 2,
+    "nom": "Ronald Araújo",
+    "age": 26,
+    "position": "Défenseur",
+    "club": "FC Barcelona",
+    "nationalite": "Uruguay",
+    "numero": 4
+  },
+  {
+    "id": 10,
+    "nom": "Ferran Torres",
+    "age": 25,
+    "position": "Attaquant",
+    "club": "FC Barcelona",
+    "nationalite": "Espagne",
+    "numero": 11
+  },
+  {
+    "id": 11,
+    "nom": "Robert Lewandowski",
+    "age": 36,
+    "position": "Attaquant",
+    "club": "FC Barcelona",
+    "nationalite": "Pologne",
+    "numero": 9
+  },
+  {
+    "id": 12,
+    "nom": "Raphinha",
+    "age": 28,
+    "position": "Attaquant",
+    "club": "FC Barcelona",
+    "nationalite": "Brésil",
+    "numero": 11
+  },
+  {
+    "id": 13,
+    "nom": "Lamine Yamal",
+    "age": 18,
+    "position": "Attaquant",
+    "club": "FC Barcelona",
+    "nationalite": "Espagne",
+    "numero": 19
+  },
+  {
+    "id": 14,
+    "nom": "João Félix",
+    "age": 25,
+    "position": "Attaquant",
+    "club": "FC Barcelona",
+    "nationalite": "Portugal",
+    "numero": 14
+  },
+  {
+    "id": 15,
+    "nom": "Oriol Romeu",
+    "age": 33,
+    "position": "Milieu",
+    "club": "FC Barcelona",
+    "nationalite": "Espagne",
+    "numero": 18
+  },
+  {
+    "id": 9,
+    "nom": "youssef",
+    "age": "22",
+    "position": "attaque",
+    "club": "RCA",
+    "numero": "10",
+    "nationalite": "Maroc"
+  }
+]

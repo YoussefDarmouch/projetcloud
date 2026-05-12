@@ -1,0 +1,563 @@
+/* ============================================================
+   FOOTBALL SERVICE — Shared Stylesheet
+   Aesthetic: Dark stadium night, neon green accents, editorial
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #080d0a;
+    --bg-2: #0e1612;
+    --bg-3: #152019;
+    --surface: #192b20;
+    --surface-2: #1f3428;
+    --border: #2a4535;
+    --border-light: #3a5f4a;
+    --green: #39ff6a;
+    --green-dim: #25c44e;
+    --green-glow: rgba(57, 255, 106, 0.18);
+    --green-soft: rgba(57, 255, 106, 0.08);
+    --white: #f0f7f2;
+    --muted: #7aac8c;
+    --danger: #ff4d6d;
+    --warning: #ffc857;
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --radius: 10px;
+    --radius-lg: 18px;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    --shadow-green: 0 0 32px rgba(57, 255, 106, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--white);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ── Pitch texture overlay ───────────────────────────────── */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 58px,
+            rgba(57, 255, 106, 0.025) 58px,
+            rgba(57, 255, 106, 0.025) 60px),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 58px,
+            rgba(57, 255, 106, 0.015) 58px,
+            rgba(57, 255, 106, 0.015) 60px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+h1 {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+/* ============================================================
+   LOGIN PAGE  (.login-page)
+   ============================================================ */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 0;
+}
+
+.login-page h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--green);
+    text-shadow: 0 0 60px rgba(57, 255, 106, 0.4);
+    animation: titlePulse 3s ease-in-out infinite;
+    margin-bottom: 0.3rem;
+}
+
+@keyframes titlePulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 60px rgba(57, 255, 106, 0.4);
+    }
+
+    50% {
+        text-shadow: 0 0 90px rgba(57, 255, 106, 0.7), 0 0 120px rgba(57, 255, 106, 0.3);
+    }
+}
+
+.login-page .subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+}
+
+/* card wrapper */
+.login-page .form-group,
+.login-page button,
+.login-page .message,
+.login-page .token-display {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-page .message {
+    min-height: 36px;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.login-page .message:not(:empty) {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+}
+
+.login-page .message.success {
+    border-color: var(--green-dim);
+    color: var(--green);
+    background: var(--green-soft);
+}
+
+.login-page .message.error {
+    border-color: var(--danger);
+    color: var(--danger);
+    background: rgba(255, 77, 109, 0.08);
+}
+
+/* Form groups */
+.login-page .form-group {
+    margin-bottom: 1rem;
+}
+
+.login-page label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.login-page input {
+    width: 100%;
+    background: var(--bg-2);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.login-page input::placeholder {
+    color: var(--muted);
+    opacity: 0.6;
+}
+
+.login-page input:focus {
+    border-color: var(--green-dim);
+    background: var(--bg-3);
+    box-shadow: 0 0 0 3px var(--green-glow);
+}
+
+/* Buttons */
+.login-page button {
+    display: block;
+    background: var(--green);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    transition: transform 0.15s, box-shadow 0.25s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-page button:hover {
+    background: #4dffa0;
+    box-shadow: 0 0 24px rgba(57, 255, 106, 0.45);
+    transform: translateY(-2px);
+}
+
+.login-page button:active {
+    transform: translateY(0);
+}
+
+.login-page button:last-of-type {
+    background: transparent;
+    color: var(--green);
+    border: 1.5px solid var(--green-dim);
+}
+
+.login-page button:last-of-type:hover {
+    background: var(--green-soft);
+    box-shadow: 0 0 18px rgba(57, 255, 106, 0.2);
+}
+
+/* Token display */
+.login-page .token-display {
+    margin-top: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    word-break: break-all;
+    line-height: 1.7;
+    display: none;
+}
+
+.login-page .token-display:not(:empty) {
+    display: block;
+}
+
+/* ============================================================
+   DASHBOARD PAGE  (.dashboard)
+   ============================================================ */
+.dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+}
+
+.dashboard h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    color: var(--white);
+    margin-bottom: 0.25rem;
+    position: relative;
+    display: inline-block;
+}
+
+.dashboard h1::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 60%;
+    background: linear-gradient(90deg, var(--green), transparent);
+    margin-top: 0.3rem;
+    border-radius: 2px;
+}
+
+/* Controls row */
+.dashboard>button,
+.dashboard>input {
+    display: inline-block;
+    margin-top: 1.8rem;
+    vertical-align: middle;
+}
+
+.dashboard>button {
+    background: var(--green);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    padding: 0.65rem 1.5rem;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.25s;
+    margin-right: 1rem;
+}
+
+.dashboard>button:hover {
+    box-shadow: 0 0 20px rgba(57, 255, 106, 0.4);
+    transform: translateY(-2px);
+}
+
+.dashboard>input[type="text"] {
+    background: var(--bg-2);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 0.62rem 1rem;
+    width: 260px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.dashboard>input[type="text"]::placeholder {
+    color: var(--muted);
+}
+
+.dashboard>input[type="text"]:focus {
+    border-color: var(--green-dim);
+    box-shadow: 0 0 0 3px var(--green-glow);
+}
+
+/* Table */
+.dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow), var(--shadow-green);
+}
+
+.dashboard thead {
+    background: var(--surface-2);
+    border-bottom: 2px solid var(--green-dim);
+}
+
+.dashboard th {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    padding: 1rem 1.25rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.dashboard tbody tr {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s, transform 0.15s;
+}
+
+.dashboard tbody tr:nth-child(even) {
+    background: var(--bg-3);
+}
+
+.dashboard tbody tr:hover {
+    background: var(--surface);
+    transform: translateX(4px);
+}
+
+.dashboard td {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--white);
+    vertical-align: middle;
+}
+
+.dashboard td:first-child {
+    font-weight: 600;
+    color: var(--white);
+}
+
+/* Action buttons inside table */
+.dashboard td button,
+.dashboard tbody button {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 0.38rem 0.85rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+    margin-right: 0.45rem;
+}
+
+/* Detail → solid green */
+.dashboard td button.edit,
+.dashboard tbody button.edit {
+    background: var(--green);
+    color: var(--bg);
+}
+
+.dashboard td button.edit:hover,
+.dashboard tbody button.edit:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 0 14px rgba(57, 255, 106, 0.55);
+    transform: translateY(-1px);
+}
+
+/* Delete → solid red */
+.dashboard td button.delete,
+.dashboard tbody button.delete {
+    background: var(--danger);
+    color: #fff;
+}
+
+.dashboard td button.delete:hover,
+.dashboard tbody button.delete:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 0 14px rgba(255, 77, 109, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Empty state */
+.dashboard tbody:empty::after {
+    content: 'Aucun joueur chargé — cliquez sur Charger';
+    display: table-cell;
+    padding: 2.5rem 1.25rem;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 680px) {
+    .dashboard {
+        padding: 2rem 1rem 3rem;
+    }
+
+    .dashboard table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .login-page {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-light);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--green-dim);
+}
+
+/* ================================
+   JOUEUR FORM (neon stadium style)
+   ================================ */
+/* ================================
+   CENTER PAGE WRAPPER
+================================ */
+.joueur-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.joueur-form {
+    margin-top: 2rem;
+    max-width: 700px;
+}
+
+/* grid ديال inputs */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* input styling (reuse dashboard look) */
+.joueur-form input {
+    width: 100%;
+    background: var(--bg-2);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: all 0.25s;
+}
+
+.joueur-form input::placeholder {
+    color: var(--muted);
+}
+
+/* focus neon effect */
+.joueur-form input:focus {
+    border-color: var(--green-dim);
+    background: var(--bg-3);
+    box-shadow: 0 0 0 3px var(--green-glow);
+}
+
+/* submit button */
+.joueur-form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: var(--green);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    padding: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.joueur-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(57, 255, 106, 0.45);
+}
+
+/* responsive */
+@media (max-width: 700px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
