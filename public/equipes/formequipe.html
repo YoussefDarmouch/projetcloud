@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Equipe</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="equipe-page">
+        <div class="dashboard">
+
+            <h1>🏆 Equipe Form</h1>
+
+            <form id="equipeForm" class="equipe-form">
+
+                <input type="hidden" id="equipeId">
+
+                <div class="form-grid">
+
+                    <input type="text" id="nom" placeholder="Nom de l'équipe" required>
+                    <input type="text" id="pays" placeholder="Pays" required>
+
+                    <input type="text" id="ville" placeholder="Ville" required>
+                    <input type="text" id="stade" placeholder="Stade" required>
+
+                    <input type="number" id="capacite" placeholder="Capacité du stade" required>
+                    <input type="text" id="entraineur" placeholder="Entraîneur" required>
+
+                    <input type="number" id="annee_fondation" placeholder="Année de fondation" required>
+                    <input type="text" id="couleurs" placeholder="Couleurs (ex: Bleu et Rouge)" required>
+
+                </div>
+
+                <button type="submit">Save Equipe</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="./equipes.js"></script>
+
+</body>
+
+</html>
