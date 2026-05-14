@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "nom": "FC Barcelona",
+    "pays": "Espagne",
+    "ville": "Barcelone",
+    "stade": "Spotify Camp Nou",
+    "capacite": 99354,
+    "entraineur": "Hansi Flick",
+    "annee_fondation": 1899,
+    "couleurs": "Bleu et Rouge"
+  },
+  {
+    "id": 2,
+    "nom": "Real Madrid",
+    "pays": "Espagne",
+    "ville": "Madrid",
+    "stade": "Santiago Bernabéu",
+    "capacite": 81044,
+    "entraineur": "Carlo Ancelotti",
+    "annee_fondation": 1902,
+    "couleurs": "Blanc"
+  },
+  {
+    "id": 3,
+    "nom": "Raja Club Athletic",
+    "pays": "Maroc",
+    "ville": "Casablanca",
+    "stade": "Stade Mohammed V",
+    "capacite": 45891,
+    "entraineur": "Juan Carlos Garrido",
+    "annee_fondation": 1949,
+    "couleurs": "Vert et Blanc"
+  },
+  {
+    "id": 4,
+    "nom": "Test Team",
+    "pays": "France",
+    "ville": "Paris",
+    "stade": "Parc des Princes",
+    "capacite": 48000,
+    "entraineur": "Test Coach",
+    "annee_fondation": 1970,
+    "couleurs": "Bleu et Rouge"
+  }
+]

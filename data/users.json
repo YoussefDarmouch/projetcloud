@@ -28,5 +28,20 @@
     "id": 6,
     "email": "Ilyasabla009@gmail.com",
     "password": "$2b$10$OHUJwFYZv05ddu9r3YUld.wTL1wTXdXPDieYtyW69l4tD2iNpWP3u"
+  },
+  {
+    "id": 7,
+    "email": "temarameryem@gmail.com",
+    "password": "$2b$10$EGguIazQeEcSML3z.kaX9u96OEPBj2VPmAHstJfOmeS1rvjbof7Ru"
+  },
+  {
+    "id": 8,
+    "email": "maryemtemara4@gmail.com",
+    "password": "$2b$10$Ex.KEJelpTXvuox5AwbO5uHBBOw614UI7jtBW9zOLyw49XJoNaBva"
+  },
+  {
+    "id": 9,
+    "email": "test@gmail.com",
+    "password": "$2b$10$sFDgcbwTeOaGWzf8AuxO/uq4RAE2Fl54wFTCOppb5pBIz6gq09tHe"
   }
 ]
