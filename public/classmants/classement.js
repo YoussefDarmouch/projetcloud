@@ -15,15 +15,28 @@ async function getClassements() {
         console.error("Erreur lors du chargement des classements:", error);
     }
 }
+async function loadStats() {
 
+    const res = await fetch(API_URL);
+    const data = await res.json();
+
+    const countEl = document.querySelector(".classements-count");
+
+    if (countEl) {
+        countEl.innerText = data.length;
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+    loadStats();
+});
 // 2. Afficher les données dans le tableau HTML
 // Remplacez votre fonction renderTable par celle-ci
 function renderTable(classements) {
     const tbody = document.getElementById("list");
     if (!tbody) return;
 
-    tbody.innerHTML = ""; 
-    
+    tbody.innerHTML = "";
+
     // Tri des équipes par points (du plus grand au plus petit)
     const classementsTries = classements.sort((a, b) => b.pts - a.pts);
 
@@ -104,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     } else {
         // Si le formulaire n'existe pas, c'est qu'on est sur le Dashboard, on charge le tableau
-        if(document.getElementById("list")) {
-             getClassements();
+        if (document.getElementById("list")) {
+            getClassements();
         }
     }
 });
