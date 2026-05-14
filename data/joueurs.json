@@ -6,7 +6,8 @@
     "position": "Gardien",
     "club": "FC Barcelona",
     "nationalite": "Allemagne",
-    "numero": 1
+    "numero": 1,
+    "buts": 0
   },
   {
     "id": 2,
@@ -15,7 +16,78 @@
     "position": "Défenseur",
     "club": "FC Barcelona",
     "nationalite": "Uruguay",
-    "numero": 4
+    "numero": 4,
+    "buts": 3
+  },
+  {
+    "id": 3,
+    "nom": "Jules Koundé",
+    "age": 26,
+    "position": "Défenseur",
+    "club": "FC Barcelona",
+    "nationalite": "France",
+    "numero": 23,
+    "buts": 2
+  },
+  {
+    "id": 4,
+    "nom": "Alejandro Balde",
+    "age": 21,
+    "position": "Défenseur",
+    "club": "FC Barcelona",
+    "nationalite": "Espagne",
+    "numero": 3,
+    "buts": 1
+  },
+  {
+    "id": 5,
+    "nom": "Andreas Christensen",
+    "age": 29,
+    "position": "Défenseur",
+    "club": "FC Barcelona",
+    "nationalite": "Danemark",
+    "numero": 15,
+    "buts": 1
+  },
+  {
+    "id": 6,
+    "nom": "Pedri",
+    "age": 22,
+    "position": "Milieu",
+    "club": "FC Barcelona",
+    "nationalite": "Espagne",
+    "numero": 8,
+    "buts": 7
+  },
+  {
+    "id": 7,
+    "nom": "Gavi",
+    "age": 20,
+    "position": "Milieu",
+    "club": "FC Barcelona",
+    "nationalite": "Espagne",
+    "numero": 6,
+    "buts": 5
+  },
+  {
+    "id": 8,
+    "nom": "Frenkie de Jong",
+    "age": 28,
+    "position": "Milieu",
+    "club": "FC Barcelona",
+    "nationalite": "Pays-Bas",
+    "numero": 21,
+    "buts": 4
+  },
+  {
+    "id": 9,
+    "nom": "Ilkay Gündogan",
+    "age": 34,
+    "position": "Milieu",
+    "club": "FC Barcelona",
+    "nationalite": "Allemagne",
+    "numero": 22,
+    "buts": 8
   },
   {
     "id": 10,
@@ -24,7 +96,8 @@
     "position": "Attaquant",
     "club": "FC Barcelona",
     "nationalite": "Espagne",
-    "numero": 11
+    "numero": 11,
+    "buts": 15
   },
   {
     "id": 11,
@@ -33,7 +106,8 @@
     "position": "Attaquant",
     "club": "FC Barcelona",
     "nationalite": "Pologne",
-    "numero": 9
+    "numero": 9,
+    "buts": 26
   },
   {
     "id": 12,
@@ -42,7 +116,8 @@
     "position": "Attaquant",
     "club": "FC Barcelona",
     "nationalite": "Brésil",
-    "numero": 11
+    "numero": 11,
+    "buts": 18
   },
   {
     "id": 13,
@@ -51,7 +126,8 @@
     "position": "Attaquant",
     "club": "FC Barcelona",
     "nationalite": "Espagne",
-    "numero": 19
+    "numero": 19,
+    "buts": 14
   },
   {
     "id": 14,
@@ -60,7 +136,8 @@
     "position": "Attaquant",
     "club": "FC Barcelona",
     "nationalite": "Portugal",
-    "numero": 14
+    "numero": 14,
+    "buts": 10
   },
   {
     "id": 15,
@@ -69,15 +146,307 @@
     "position": "Milieu",
     "club": "FC Barcelona",
     "nationalite": "Espagne",
-    "numero": 18
+    "numero": 18,
+    "buts": 2
+  },
+  {
+    "id": 1,
+    "nom": "Thibaut Courtois",
+    "age": 33,
+    "position": "Gardien",
+    "club": "Real Madrid",
+    "nationalite": "Belgique",
+    "numero": 1,
+    "buts": 0
+  },
+  {
+    "id": 2,
+    "nom": "Dani Carvajal",
+    "age": 33,
+    "position": "Défenseur",
+    "club": "Real Madrid",
+    "nationalite": "Espagne",
+    "numero": 2,
+    "buts": 2
+  },
+  {
+    "id": 3,
+    "nom": "Antonio Rüdiger",
+    "age": 33,
+    "position": "Défenseur",
+    "club": "Real Madrid",
+    "nationalite": "Allemagne",
+    "numero": 22,
+    "buts": 3
+  },
+  {
+    "id": 4,
+    "nom": "David Alaba",
+    "age": 34,
+    "position": "Défenseur",
+    "club": "Real Madrid",
+    "nationalite": "Autriche",
+    "numero": 4,
+    "buts": 1
+  },
+  {
+    "id": 5,
+    "nom": "Ferland Mendy",
+    "age": 30,
+    "position": "Défenseur",
+    "club": "Real Madrid",
+    "nationalite": "France",
+    "numero": 23,
+    "buts": 1
+  },
+  {
+    "id": 6,
+    "nom": "Jude Bellingham",
+    "age": 22,
+    "position": "Milieu",
+    "club": "Real Madrid",
+    "nationalite": "Angleterre",
+    "numero": 5,
+    "buts": 19
+  },
+  {
+    "id": 7,
+    "nom": "Federico Valverde",
+    "age": 27,
+    "position": "Milieu",
+    "club": "Real Madrid",
+    "nationalite": "Uruguay",
+    "numero": 8,
+    "buts": 9
+  },
+  {
+    "id": 8,
+    "nom": "Eduardo Camavinga",
+    "age": 23,
+    "position": "Milieu",
+    "club": "Real Madrid",
+    "nationalite": "France",
+    "numero": 6,
+    "buts": 4
   },
   {
     "id": 9,
-    "nom": "youssef",
-    "age": "22",
-    "position": "attaque",
-    "club": "RCA",
-    "numero": "10",
-    "nationalite": "Maroc"
+    "nom": "Aurélien Tchouaméni",
+    "age": 26,
+    "position": "Milieu",
+    "club": "Real Madrid",
+    "nationalite": "France",
+    "numero": 14,
+    "buts": 3
+  },
+  {
+    "id": 10,
+    "nom": "Vinícius Júnior",
+    "age": 25,
+    "position": "Attaquant",
+    "club": "Real Madrid",
+    "nationalite": "Brésil",
+    "numero": 7,
+    "buts": 24
+  },
+  {
+    "id": 11,
+    "nom": "Rodrygo",
+    "age": 25,
+    "position": "Attaquant",
+    "club": "Real Madrid",
+    "nationalite": "Brésil",
+    "numero": 11,
+    "buts": 17
+  },
+  {
+    "id": 12,
+    "nom": "Kylian Mbappé",
+    "age": 27,
+    "position": "Attaquant",
+    "club": "Real Madrid",
+    "nationalite": "France",
+    "numero": 9,
+    "buts": 31
+  },
+  {
+    "id": 13,
+    "nom": "Brahim Díaz",
+    "age": 27,
+    "position": "Attaquant",
+    "club": "Real Madrid",
+    "nationalite": "Maroc",
+    "numero": 21,
+    "buts": 10
+  },
+  {
+    "id": 14,
+    "nom": "Arda Güler",
+    "age": 21,
+    "position": "Milieu",
+    "club": "Real Madrid",
+    "nationalite": "Turquie",
+    "numero": 15,
+    "buts": 6
+  },
+  {
+    "id": 15,
+    "nom": "Luka Modrić",
+    "age": 40,
+    "position": "Milieu",
+    "club": "Real Madrid",
+    "nationalite": "Croatie",
+    "numero": 10,
+    "buts": 5
+  },
+  {
+    "id": 1,
+    "nom": "Anas Zniti",
+    "age": 37,
+    "position": "Gardien",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 1,
+    "buts": 0
+  },
+  {
+    "id": 2,
+    "nom": "Abdelilah Madkour",
+    "age": 29,
+    "position": "Défenseur",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 3,
+    "buts": 2
+  },
+  {
+    "id": 3,
+    "nom": "Jamal Harkass",
+    "age": 30,
+    "position": "Défenseur",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 6,
+    "buts": 3
+  },
+  {
+    "id": 4,
+    "nom": "Mohamed Boulacsoute",
+    "age": 27,
+    "position": "Défenseur",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 24,
+    "buts": 1
+  },
+  {
+    "id": 5,
+    "nom": "Yousri Bouzok",
+    "age": 29,
+    "position": "Attaquant",
+    "club": "Raja Club Athletic",
+    "nationalite": "Algérie",
+    "numero": 26,
+    "buts": 14
+  },
+  {
+    "id": 6,
+    "nom": "Mohamed Zrida",
+    "age": 27,
+    "position": "Milieu",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 11,
+    "buts": 6
+  },
+  {
+    "id": 7,
+    "nom": "Adam Ennafati",
+    "age": 29,
+    "position": "Milieu",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 19,
+    "buts": 5
+  },
+  {
+    "id": 8,
+    "nom": "Sabir Bougrine",
+    "age": 29,
+    "position": "Milieu",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 34,
+    "buts": 7
+  },
+  {
+    "id": 9,
+    "nom": "Nassim Chadli",
+    "age": 24,
+    "position": "Attaquant",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 7,
+    "buts": 8
+  },
+  {
+    "id": 10,
+    "nom": "Zakaria El Wardi",
+    "age": 27,
+    "position": "Milieu",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 15,
+    "buts": 4
+  },
+  {
+    "id": 11,
+    "nom": "Mahmoud Benhalib",
+    "age": 29,
+    "position": "Attaquant",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 9,
+    "buts": 12
+  },
+  {
+    "id": 12,
+    "nom": "Ismail Mokadem",
+    "age": 30,
+    "position": "Défenseur",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 5,
+    "buts": 2
+  },
+  {
+    "id": 13,
+    "nom": "Houssine Rahimi",
+    "age": 24,
+    "position": "Attaquant",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 17,
+    "buts": 9
+  },
+  {
+    "id": 14,
+    "nom": "Zakaria Labib",
+    "age": 22,
+    "position": "Gardien",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 12,
+    "buts": 0
+  },
+  {
+    "id": 15,
+    "nom": "Youssef",
+    "age": 22,
+    "position": "Attaquant",
+    "club": "Raja Club Athletic",
+    "nationalite": "Maroc",
+    "numero": 10,
+    "buts": 20
   }
 ]

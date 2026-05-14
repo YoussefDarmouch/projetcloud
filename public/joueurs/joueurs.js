@@ -15,6 +15,8 @@ async function getJoueurs() {
     allJoueurs = data;
 
     displayJoueurs(data);
+
+
 }
 
 
@@ -174,6 +176,7 @@ if (form) {
 
         const data = {
 
+
             nom: document.getElementById('nom').value,
 
             age: document.getElementById('age').value,
@@ -215,3 +218,4 @@ if (document.getElementById('list')) {
 
     getJoueurs();
 }
+
