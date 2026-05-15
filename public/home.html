@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Football Platform - Home</title>
     <link rel="stylesheet" href="./style.css">
-    
+
     <style>
         /* Navigation bar styling */
         nav {
@@ -17,6 +18,7 @@
             background: rgba(8, 13, 10, 0.8);
             backdrop-filter: blur(10px);
         }
+
         nav a {
             color: var(--muted);
             text-decoration: none;
@@ -29,11 +31,13 @@
             border-radius: var(--radius);
             position: relative;
         }
+
         nav a.active {
             color: var(--green);
             background: var(--green-soft);
             border: 1px solid var(--green-dim);
         }
+
         nav a:hover {
             color: var(--white);
             background: var(--surface);
@@ -177,6 +181,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -201,6 +206,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -222,14 +228,16 @@
             <p>Gérez votre effectif et suivez les performances de vos joueurs</p>
             <span class="arrow">→</span>
         </div>
-        
+
+
         <div class="card" onclick="window.location.href='./equipes/equipes.html'">
             <span class="icon">🏆</span>
             <h2>Equipes</h2>
             <p>Gérez les équipes et les informations des clubs</p>
             <span class="arrow">→</span>
         </div>
-        
+
+
         <div class="card" onclick="window.location.href='./classmants/classmants.html'">
             <span class="icon">🏆</span>
             <h2>Classement</h2>
@@ -238,20 +246,19 @@
         </div>
     </div>
 
+
     <div class="stats">
         <div class="stat-item">
-            <div class="number">24</div>
+            <div class="number joueurs-count">0</div>
             <div class="label">Joueurs</div>
         </div>
         <div class="stat-item">
-            <div class="number">18</div>
-            <div class="label">Équipes</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">380</div>
-            <div class="label">Matchs</div>
+            <div class="number classements-count">0</div>
+            <div class="label">Classements</div>
         </div>
     </div>
 
+    <script src="./home.js"></script>
 </body>
+
 </html>
