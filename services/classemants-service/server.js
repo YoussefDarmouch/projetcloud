@@ -1,7 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const verifyToken = require("../../middleware/verifyToken");
 const app = express();
+
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
+
 app.use(express.json());
 
 // Configuration CORS
@@ -14,6 +18,8 @@ app.use((req, res, next) => {
     }
     next();
 });
+
+app.use('/classements', verifyToken);
 
 // Chemin vers le fichier JSON du classement
 const filePath = path.join(__dirname, "../../data/classmant.json");
@@ -62,17 +68,17 @@ app.get("/classements/:id", (req, res) => {
 // ==========================================
 function addClassement(nouveauClassement) {
     const classements = getAllClassements();
-    
+
     // Kaneswbo objet jdid fih id jdid w les infos li jawna
     const newEntry = {
         id: classements.length > 0 ? Math.max(...classements.map(c => c.id || 0)) + 1 : 1,
         ...nouveauClassement
     };
-    
+
     classements.push(newEntry);
     // Kanketbou data jdida f lfile
     fs.writeFileSync(filePath, JSON.stringify(classements, null, 2));
-    
+
     return newEntry;
 }
 
@@ -108,13 +114,13 @@ function updateClassement(id, donneesMisesAJour) {
 // API: Update classement
 app.put("/classements/:id", (req, res) => {
     const classement = updateClassement(req.params.id, req.body);
-    
+
     if (!classement) {
         return res.status(404).json({
             message: "Classement introuvable pour la mise à jour"
         });
     }
-    
+
     res.json(classement);
 });
 

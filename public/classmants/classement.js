@@ -1,6 +1,22 @@
 // L'URL de votre API Classement (Port 3003)
 const API_URL = "http://localhost:3003/classements";
 
+// Helper function for authenticated requests
+function fetchWithAuth(url, options = {}) {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        throw new Error('Token manquant. Veuillez vous connecter.');
+    }
+    return fetch(url, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            ...options.headers
+        }
+    });
+}
+
 // ==========================================
 // LOGIQUE DU DASHBOARD (classement.html)
 // ==========================================
@@ -8,7 +24,7 @@ const API_URL = "http://localhost:3003/classements";
 // 1. Charger tous les classements
 async function getClassements() {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetchWithAuth(API_URL);
         const data = await response.json();
         renderTable(data);
     } catch (error) {
@@ -17,7 +33,7 @@ async function getClassements() {
 }
 async function loadStats() {
 
-    const res = await fetch(API_URL);
+    const res = await fetchWithAuth(API_URL);
     const data = await res.json();
 
     const countEl = document.querySelector(".classements-count");
@@ -66,7 +82,7 @@ function renderTable(classements) {
 // 3. Barre de recherche par équipe ou championnat
 function searchClassements() {
     const input = document.getElementById("search").value.toLowerCase();
-    fetch(API_URL)
+    fetchWithAuth(API_URL)
         .then(res => res.json())
         .then(data => {
             const filtered = data.filter(c =>
@@ -80,7 +96,7 @@ function searchClassements() {
 // 4. Supprimer une équipe
 async function deleteClassement(id) {
     if (confirm("Voulez-vous vraiment supprimer cette équipe du classement ?")) {
-        await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+        await fetchWithAuth(`${API_URL}/${id}`, { method: "DELETE" });
         getClassements(); // Recharger le tableau
     }
 }
@@ -126,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 6. Remplir le formulaire avec les données existantes (Mode Édition)
 async function loadClassementForEdit(id) {
     try {
-        const response = await fetch(`${API_URL}/${id}`);
+        const response = await fetchWithAuth(`${API_URL}/${id}`);
         const data = await response.json();
 
         // Remplir les inputs avec les données récupérées
@@ -170,9 +186,8 @@ async function saveClassement() {
     const url = id ? `${API_URL}/${id}` : API_URL;
 
     try {
-        await fetch(url, {
+        await fetchWithAuth(url, {
             method: method,
-            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(classementData)
         });
 

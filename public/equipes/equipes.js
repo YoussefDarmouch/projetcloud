@@ -2,11 +2,27 @@ const EQUIPE_URL = 'http://localhost:3004';
 
 let allEquipes = [];
 
+// Helper function for authenticated requests
+function fetchWithAuth(url, options = {}) {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        throw new Error('Token manquant. Veuillez vous connecter.');
+    }
+    return fetch(url, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            ...options.headers
+        }
+    });
+}
+
 // =====================
 // GET ALL
 // =====================
 async function getEquipes() {
-    const res = await fetch(`${EQUIPE_URL}/equipes`);
+    const res = await fetchWithAuth(`${EQUIPE_URL}/equipes`);
     const data = await res.json();
     allEquipes = data;
     displayEquipes(data);
@@ -18,6 +34,10 @@ async function getEquipes() {
 function displayEquipes(equipes) {
     const container = document.getElementById('list');
     if (!container) return;
+    if (!Array.isArray(equipes)) {
+        console.error('Expected equipes array but got', equipes);
+        return;
+    }
 
     container.innerHTML = equipes.map(e => {
         return `
@@ -65,7 +85,7 @@ function searchEquipes() {
 // =====================
 async function removeEquipe(id) {
     if (confirm('Voulez-vous vraiment supprimer cette équipe ?')) {
-        await fetch(`${EQUIPE_URL}/equipes/${id}`, {
+        await fetchWithAuth(`${EQUIPE_URL}/equipes/${id}`, {
             method: "DELETE"
         });
         getEquipes();
@@ -76,11 +96,8 @@ async function removeEquipe(id) {
 // ADD
 // =====================
 async function addEquipe(data) {
-    await fetch(`${EQUIPE_URL}/equipes`, {
+    await fetchWithAuth(`${EQUIPE_URL}/equipes`, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
         body: JSON.stringify(data)
     });
 }
@@ -89,11 +106,8 @@ async function addEquipe(data) {
 // UPDATE
 // =====================
 async function updateEquipe(id, data) {
-    await fetch(`${EQUIPE_URL}/equipes/${id}`, {
+    await fetchWithAuth(`${EQUIPE_URL}/equipes/${id}`, {
         method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
         body: JSON.stringify(data)
     });
 }
@@ -113,7 +127,7 @@ if (form) {
     async function loadEquipe() {
         if (!id) return;
 
-        const res = await fetch(`${EQUIPE_URL}/equipes/${id}`);
+        const res = await fetchWithAuth(`${EQUIPE_URL}/equipes/${id}`);
         const equipe = await res.json();
         console.log("EQUIPE LOADED:", equipe);
 

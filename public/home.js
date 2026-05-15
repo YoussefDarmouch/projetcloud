@@ -1,11 +1,26 @@
 const HOME_JOUEUR_URL = 'http://localhost:3002/joueurs';
 const HOME_CLASSEMENT_URL = 'http://localhost:3003/classements';
 
+function fetchWithAuth(url, options = {}) {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        throw new Error('Token manquant. Veuillez vous connecter.');
+    }
+    return fetch(url, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            ...options.headers
+        }
+    });
+}
+
 async function loadHomeStats() {
     try {
         const [joueursRes, classementsRes] = await Promise.all([
-            fetch(HOME_JOUEUR_URL),
-            fetch(HOME_CLASSEMENT_URL)
+            fetchWithAuth(HOME_JOUEUR_URL),
+            fetchWithAuth(HOME_CLASSEMENT_URL)
         ]);
 
         if (joueursRes.ok) {

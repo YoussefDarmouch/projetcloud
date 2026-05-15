@@ -2,13 +2,35 @@ const JOUEUR_URL = 'http://localhost:3002';
 
 let allJoueurs = [];
 
+// Helper function for authenticated requests
+function fetchWithAuth(url, options = {}) {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        throw new Error('Token manquant. Veuillez vous connecter.');
+    }
+
+    return fetch(url, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            ...options.headers
+        }
+    });
+}
+
 
 // =====================
 // GET ALL
 // =====================
 async function getJoueurs() {
 
-    const res = await fetch(`${JOUEUR_URL}/joueurs`);
+    const res = await fetchWithAuth(`${JOUEUR_URL}/joueurs`);
+
+    if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error || 'Erreur chargement joueurs');
+    }
 
     const data = await res.json();
 
@@ -28,6 +50,11 @@ function displayJoueurs(joueurs) {
     const container = document.getElementById('list');
 
     if (!container) return;
+
+    if (!Array.isArray(joueurs)) {
+        console.error('Expected joueurs array but got', joueurs);
+        return;
+    }
 
     container.innerHTML = joueurs.map(j => {
 
@@ -86,7 +113,7 @@ function searchJoueurs() {
 // =====================
 async function removeJoueur(id) {
 
-    await fetch(`${JOUEUR_URL}/joueurs/${id}`, {
+    await fetchWithAuth(`${JOUEUR_URL}/joueurs/${id}`, {
         method: "DELETE"
     });
 
@@ -99,13 +126,9 @@ async function removeJoueur(id) {
 // =====================
 async function addJoueur(data) {
 
-    await fetch(`${JOUEUR_URL}/joueurs`, {
+    await fetchWithAuth(`${JOUEUR_URL}/joueurs`, {
 
         method: "POST",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
 
         body: JSON.stringify(data)
     });
@@ -117,13 +140,9 @@ async function addJoueur(data) {
 // =====================
 async function updateJoueur(id, data) {
 
-    await fetch(`${JOUEUR_URL}/joueurs/${id}`, {
+    await fetchWithAuth(`${JOUEUR_URL}/joueurs/${id}`, {
 
         method: "PUT",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
 
         body: JSON.stringify(data)
     });
@@ -150,7 +169,13 @@ if (form) {
 
         if (!id) return;
 
-        const res = await fetch(`${JOUEUR_URL}/joueurs/${id}`);
+        const res = await fetchWithAuth(`${JOUEUR_URL}/joueurs/${id}`);
+
+        if (!res.ok) {
+            const error = await res.json();
+            console.error('Erreur chargement joueur:', error);
+            return;
+        }
 
         const joueur = await res.json();
         console.log("JOUEUR LOADED:", joueur);

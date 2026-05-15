@@ -2,7 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const { json } = require("stream/consumers");
 const express = require("express");
+const verifyToken = require("../../middleware/verifyToken");
 const app = express();
+
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
+
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -14,6 +18,9 @@ app.use((req, res, next) => {
     }
     next();
 });
+
+app.use('/joueurs', verifyToken);
+
 const filePath = path.join(__dirname, "../../data/joueurs.json");
 // get all data logic 
 function getAllJoueurs() {
