@@ -1,16 +1,5 @@
 [
   {
-    "id": 1,
-    "nom": "FC Barcelona",
-    "pays": "Espagne",
-    "ville": "Barcelone",
-    "stade": "Spotify Camp Nou",
-    "capacite": 99354,
-    "entraineur": "Hansi Flick",
-    "annee_fondation": 1899,
-    "couleurs": "Bleu et Rouge"
-  },
-  {
     "id": 2,
     "nom": "Real Madrid",
     "pays": "Espagne",
@@ -42,5 +31,27 @@
     "entraineur": "Test Coach",
     "annee_fondation": 1970,
     "couleurs": "Bleu et Rouge"
+  },
+  {
+    "id": 5,
+    "nom": "Meryem Temara",
+    "pays": "Maroc",
+    "ville": "Casablanca",
+    "stade": "test",
+    "capacite": 5,
+    "entraineur": "test",
+    "annee_fondation": 2,
+    "couleurs": "test"
+  },
+  {
+    "id": 5,
+    "nom": "Meryem Temara",
+    "pays": "Maroc",
+    "ville": "Casablanca",
+    "stade": "test",
+    "capacite": 6,
+    "entraineur": "test",
+    "annee_fondation": 1,
+    "couleurs": "e"
   }
 ]
