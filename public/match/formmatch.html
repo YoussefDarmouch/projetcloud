@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        if (!localStorage.getItem('token')) {
+            window.location.replace('../index.html');
+        }
+    </script>
+    <meta charset="UTF-8">
+
+    <title>Form Match</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="match-page">
+
+        <div class="dashboard">
+
+            <h1>Match Form</h1>
+
+            <form id="matchForm" class="match-form">
+
+                <input type="hidden" id="matchId">
+
+                <div class="form-grid">
+
+                    <input type="text" id="equipeA" placeholder="Equipe A" required>
+                    <input type="text" id="equipeB" placeholder="Equipe B" required>
+
+                    <input type="datetime-local" id="date" placeholder="Date" required>
+                    <input type="number" id="scoreA" placeholder="Score A">
+
+                    <input type="number" id="scoreB" placeholder="Score B">
+                    <input type="text" id="lieu" placeholder="Lieu">
+
+                </div>
+
+                <button type="submit">Save Match</button>
+                <button onclick="window.location.href='./match.html'"
+                    style="background-color: #161b22; color: #8b949e; border: 1px solid #30363d; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 20px;">
+                    ⬅️ Retour
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script src="./match.js"></script>
+
+</body>
+
+</html>

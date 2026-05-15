@@ -669,3 +669,74 @@ h1 {
 .equipe-form input::placeholder {
     color: var(--muted);
 }
+
+/* ============================================================
+   MATCH FORM PAGE  (.match-page)
+   ============================================================ */
+.match-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 0;
+}
+
+.match-page h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    color: var(--white);
+    margin-bottom: 0.3rem;
+}
+
+.match-form {
+    margin-top: 2rem;
+    max-width: 700px;
+}
+
+.match-form input {
+    width: 100%;
+    background: var(--bg-2);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: all 0.25s;
+}
+
+.match-form input::placeholder {
+    color: var(--muted);
+}
+
+.match-form input:focus {
+    border-color: var(--green-dim);
+    background: var(--bg-3);
+    box-shadow: 0 0 0 3px var(--green-glow);
+}
+
+.match-form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: var(--green);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    padding: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.match-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(57, 255, 106, 0.45);
+}
+
+.match-form button:active {
+    transform: translateY(0);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        if (!localStorage.getItem('token')) {
+            window.location.replace('../index.html');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Match Dashboard</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <button onclick="window.location.href='../home.html'"
+            style="background-color: #161b22; color: #8b949e; border: 1px solid #30363d; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 20px;">
+            ⬅️ Retour à l'accueil
+        </button>
+
+        <h1>⚽ Matchs Dashboard</h1>
+
+        <button onclick="window.location.href='formmatch.html'">
+            Ajouter Match
+        </button>
+
+        <input type="text" id="search" placeholder="🔍 Search..." onkeyup="searchMatchs()">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Equipe A</th>
+                    <th>Equipe B</th>
+                    <th>Date</th>
+                    <th>Score A</th>
+                    <th>Score B</th>
+                    <th>Lieu</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="list"></tbody>
+        </table>
+
+    </div>
+
+    <script src="./match.js"></script>
+
+</body>
+
+</html>

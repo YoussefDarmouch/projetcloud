@@ -10,14 +10,16 @@
     "start:joueur": "node services/joueur-service/server.js",
     "start:classmants": "node services/classemants-service/server.js",
     "start:equipes": "node services/equipes-service/server.js",
-    "start:all": "concurrently \"npm run start\" \"npm run start:auth\" \"npm run start:joueur\" \"npm run start:classmants\" \"npm run start:equipes\" \"npm run dev:reservation\"",
+    "start:match": "nodemon services/match-service/server.js",
+    "start:all": "concurrently \"npm run start\" \"npm run start:auth\" \"npm run start:joueur\" \"npm run start:classmants\" \"npm run start:equipes\" \"npm run dev:reservation\"\"npm run dev:match\"",
     "dev": "nodemon api.js",
     "dev:auth": "nodemon services/auth-service/server.js",
     "dev:joueur": "nodemon services/joueur-service/server.js",
     "dev:classmants": "nodemon services/classemants-service/server.js",
     "dev:equipes": "nodemon services/equipes-service/server.js",
     "dev:reservation": "nodemon services/reservation-service/server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run dev:auth\" \"npm run dev:joueur\" \"npm run dev:classmants\" \"npm run dev:equipes\"  \"npm run dev:reservation\""
+    "dev:match": "nodemon services/match-service/server.js",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:auth\" \"npm run dev:joueur\" \"npm run dev:classmants\" \"npm run dev:equipes\"  \"npm run dev:reservation\" \"npm run dev:match\""
   },
   "keywords": [],
   "author": "",
