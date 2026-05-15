@@ -2,6 +2,12 @@
 <html lang="fr">
 
 <head>
+    <script>
+        // Check authentication immediately - MUST be first
+        if (!localStorage.getItem('token')) {
+            window.location.replace('./index.html');
+        }
+    </script>
     <meta charset="UTF-8">
     <title>Football Platform - Home</title>
     <link rel="stylesheet" href="./style.css">
@@ -214,6 +220,7 @@
         <a href="./joueurs/joueurs.html">Joueurs</a>
         <a href="./equipes/equipes.html">Equipes</a>
         <a href="./classmants/classmants.html">Classement</a>
+        <a href="./reservations/reservations.html">Reservations</a>
     </nav>
 
     <div class="hero">
@@ -242,6 +249,12 @@
             <span class="icon">🏆</span>
             <h2>Classement</h2>
             <p>Suivez le classement et les statistiques de votre championnat</p>
+            <span class="arrow">→</span>
+        </div>
+        <div class="card" onclick="window.location.href='./reservations/reservations.html'">
+            <span class="icon">🎫</span>
+            <h2>Reservations</h2>
+            <p>Suivez le Reservations</p>
             <span class="arrow">→</span>
         </div>
     </div>

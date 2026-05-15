@@ -2,6 +2,11 @@ const JOUEUR_URL = 'http://localhost:3002';
 
 let allJoueurs = [];
 
+// Check if user is logged in
+if (!localStorage.getItem('token')) {
+    window.location.href = '../login.html';
+}
+
 // Helper function for authenticated requests
 function fetchWithAuth(url, options = {}) {
     const token = localStorage.getItem('token');

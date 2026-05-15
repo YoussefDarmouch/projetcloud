@@ -1,6 +1,11 @@
 // L'URL de votre API Classement (Port 3003)
 const API_URL = "http://localhost:3003/classements";
 
+// Check if user is logged in
+if (!localStorage.getItem('token')) {
+    window.location.href = '../login.html';
+}
+
 // Helper function for authenticated requests
 function fetchWithAuth(url, options = {}) {
     const token = localStorage.getItem('token');

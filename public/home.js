@@ -1,6 +1,21 @@
 const HOME_JOUEUR_URL = 'http://localhost:3002/joueurs';
 const HOME_CLASSEMENT_URL = 'http://localhost:3003/classements';
 
+// Check if user is logged in
+function checkAuthentication() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        window.location.href = './login.html';
+        return false;
+    }
+    return true;
+}
+
+// Redirect to login if not authenticated
+if (!checkAuthentication()) {
+    throw new Error('Not authenticated');
+}
+
 function fetchWithAuth(url, options = {}) {
     const token = localStorage.getItem('token');
     if (!token) {

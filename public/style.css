@@ -534,6 +534,42 @@ h1 {
     box-shadow: 0 0 0 3px var(--green-glow);
 }
 
+/* select styling (match input look) */
+.joueur-form select {
+    width: 100%;
+    background: var(--bg-2) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="rgb(122,172,140)" stroke-width="2"><path d="M6 8l4 4 4-4"/></svg>') no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 20px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    outline: none;
+    transition: all 0.25s;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.joueur-form select:focus {
+    border-color: var(--green-dim);
+    background-color: var(--bg-3);
+    box-shadow: 0 0 0 3px var(--green-glow);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="rgb(57,255,106)" stroke-width="2"><path d="M6 8l4 4 4-4"/></svg>');
+    background-position: right 0.75rem center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.joueur-form select option {
+    background: var(--bg);
+    color: var(--white);
+    padding: 0.5rem;
+}
+
 /* submit button */
 .joueur-form button {
     margin-top: 1.5rem;
@@ -629,6 +665,7 @@ h1 {
 .equipe-form button:active {
     transform: translateY(0);
 }
+
 .equipe-form input::placeholder {
     color: var(--muted);
 }

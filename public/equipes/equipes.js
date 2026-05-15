@@ -2,6 +2,11 @@ const EQUIPE_URL = 'http://localhost:3004';
 
 let allEquipes = [];
 
+// Check if user is logged in
+if (!localStorage.getItem('token')) {
+    window.location.href = '../login.html';
+}
+
 // Helper function for authenticated requests
 function fetchWithAuth(url, options = {}) {
     const token = localStorage.getItem('token');

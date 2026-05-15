@@ -2,6 +2,12 @@
 <html lang="fr">
 
 <head>
+    <script>
+        // Check authentication immediately - MUST be first
+        if (!localStorage.getItem('token')) {
+            window.location.replace('../index.html');
+        }
+    </script>
     <meta charset="UTF-8">
     <title>Form Classement</title>
     <link rel="stylesheet" href="../style.css">

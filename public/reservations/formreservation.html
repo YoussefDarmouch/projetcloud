@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        // Check authentication immediately - MUST be first
+        if (!localStorage.getItem('token')) {
+            window.location.replace('../index.html');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Form Reservation</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="joueur-page">
+        <div class="dashboard">
+
+            <h1>🎫 Reservation Form</h1>
+
+            <form id="reservationForm" class="joueur-form">
+
+                <input type="hidden" id="reservationId">
+
+                <div class="form-grid">
+
+                    <input type="text" id="supporter" placeholder="Nom complet" required>
+                    <select id="match" required>
+                        <option value="">Choisir Match</option>
+                        <option value="FC Barcelona vs Real Madrid">FC Barcelona vs Real Madrid</option>
+                        <option value="Raja Club Athletic vs AS FAR">Raja Club Athletic vs AS FAR</option>
+                    </select>
+
+                    <input type="number" id="tickets" placeholder="Nombre de tickets" required>
+                    <select id="category" required>
+                        <option value="">Choisir Category</option>
+                        <option value="Normal">Normal</option>
+                        <option value="VIP">VIP</option>
+                    </select>
+
+                    <input type="date" id="reservationDate" placeholder="Date Reservation" required>
+
+                </div>
+
+                <button type="submit">Save Reservation</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="./reservations.js"></script>
+
+</body>
+
+</html>

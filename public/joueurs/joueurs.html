@@ -2,6 +2,12 @@
 <html lang="fr">
 
 <head>
+    <script>
+        // Check authentication immediately - MUST be first
+        if (!localStorage.getItem('token')) {
+            window.location.replace('../index.html');
+        }
+    </script>
     <meta charset="UTF-8">
     <title>Joueurs Dashboard</title>
     <link rel="stylesheet" href="../style.css">
@@ -12,12 +18,13 @@
     <div class="dashboard">
 
         <!-- Bouton Retour à l'accueil -->
-        <button onclick="window.location.href='../home.html'" style="background-color: #161b22; color: #8b949e; border: 1px solid #30363d; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 20px;">
+        <button onclick="window.location.href='../home.html'"
+            style="background-color: #161b22; color: #8b949e; border: 1px solid #30363d; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 20px;">
             ⬅️ Retour à l'accueil
         </button>
 
         <h1>⚽ Joueurs Dashboard</h1>
-        
+
         <button onclick="window.location.href='formjoueur.html'">
             Ajouter Joueur
         </button>
