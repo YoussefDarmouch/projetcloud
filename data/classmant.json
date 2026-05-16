@@ -10,7 +10,7 @@
     "bp": 70,
     "bc": 22,
     "diff": 48,
-    "pts": 83,
+    "pts": 30,
     "championnat": "La Liga"
   },
   {
@@ -24,7 +24,7 @@
     "bp": 68,
     "bc": 25,
     "diff": 43,
-    "pts": 78,
+    "pts": 80,
     "championnat": "La Liga"
   },
   {
@@ -82,5 +82,18 @@
     "diff": 25,
     "pts": 67,
     "championnat": "La Liga"
+  },
+  {
+    "id": 7,
+    "equipe": "Milan",
+    "championnat": "Serie A",
+    "mj": 35,
+    "pts": 60,
+    "g": 22,
+    "n": 4,
+    "p": 4,
+    "bp": 89,
+    "bc": 9,
+    "diff": 30
   }
 ]

@@ -1,3 +1,4 @@
+// Importer les modules nécessaires
 const fs = require("fs");
 const path = require("path");
 const { json } = require("stream/consumers");
@@ -5,10 +6,13 @@ const express = require("express");
 const verifyToken = require("../../middleware/verifyToken");
 const app = express();
 
+// Charger les variables d'environnement
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
+// Middleware pour parser les corps de requête JSON
 app.use(express.json());
 
+// Middleware de configuration CORS
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
@@ -19,14 +23,19 @@ app.use((req, res, next) => {
     next();
 });
 
+// Middleware pour vérifier le token pour toutes les routes /joueurs
 app.use('/joueurs', verifyToken);
 
+// Chemin vers le fichier de données des joueurs
 const filePath = path.join(__dirname, "../../data/joueurs.json");
-// get all data logic 
+
+// Fonction pour obtenir tous les joueurs depuis le fichier de données
+// logique pour obtenir toutes les données 
 function getAllJoueurs() {
     const data = fs.readFileSync(filePath);
     return JSON.parse(data);
 }
+// Point de terminaison de l'API pour obtenir tous les joueurs
 // api get all
 app.get("/joueurs", (req, res) => {
 
@@ -36,7 +45,8 @@ app.get("/joueurs", (req, res) => {
 });
 
 
-// Get All By Id
+// Fonction pour obtenir un joueur par son ID
+// Obtenir tout par ID
 
 
 function getJoueursById(id) {
@@ -44,6 +54,7 @@ function getJoueursById(id) {
     return Joueurs.find(Joueur => Joueur.id == id);
 }
 
+// Point de terminaison de l'API pour obtenir un joueur par son ID
 // api get by id
 
 app.get("/joueurs/:id", (req, res) => {
@@ -52,14 +63,15 @@ app.get("/joueurs/:id", (req, res) => {
 
     if (!joueur) {
         return res.status(404).json({
-            message: "Joueur not found"
+            message: "Joueur non trouvé"
         });
     }
 
     res.json(joueur);
 });
 
-// add Joueur
+// Fonction pour ajouter un nouveau joueur
+// ajouter un joueur
 
 function addJoueur(Joueur) {
     const Joueurs = getAllJoueurs();
@@ -73,6 +85,7 @@ function addJoueur(Joueur) {
     );
     return newJoueur;
 }
+// Point de terminaison de l'API pour ajouter un nouveau joueur
 // api add joueur
 app.post("/joueurs", (req, res) => {
 
@@ -80,7 +93,8 @@ app.post("/joueurs", (req, res) => {
     res.json(joueur)
 });
 
-// upadate joueur
+// Fonction pour mettre à jour un joueur existant
+// mettre à jour un joueur
 function updateJoueur(id, Joueur) {
     const Joueurs = getAllJoueurs();
 
@@ -99,20 +113,22 @@ function updateJoueur(id, Joueur) {
 
     return Joueurs[index];
 }
-// api upadate jouer
+// Point de terminaison de l'API pour mettre à jour un joueur
+// api update jouer
 
 app.put("/joueurs/:id", (req, res) => {
 
     const joueur = updateJoueur(req.params.id, req.body)
     if (!joueur) {
         return res.status(404).json({
-            message: "Joueur not found"
+            message: "Joueur non trouvé"
         });
     }
     res.json(joueur);
 });
 
-//  remove jouer 
+// Fonction pour supprimer un joueur
+//  supprimer un joueur 
 
 function removeJoueur(id) {
     let Joueurs = getAllJoueurs();
@@ -124,12 +140,14 @@ function removeJoueur(id) {
     return Joueurs;
 }
 
+// Point de terminaison de l'API pour supprimer un joueur
 // api remove jouer 
 app.delete("/joueurs/:id", (req, res) => {
 
     const joueur = removeJoueur(req.params.id);
     res.json(joueur)
 });
+// Exporter les fonctions pour une utilisation externe
 module.exports = {
     getAllJoueurs,
     addJoueur,
@@ -137,6 +155,7 @@ module.exports = {
     removeJoueur,
     updateJoueur,
 }
+// Démarrer le serveur
 app.listen(3002, () => {
     console.log("Server running on port 3002");
 });

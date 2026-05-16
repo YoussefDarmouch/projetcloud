@@ -43,5 +43,15 @@
     "id": 9,
     "email": "test@gmail.com",
     "password": "$2b$10$sFDgcbwTeOaGWzf8AuxO/uq4RAE2Fl54wFTCOppb5pBIz6gq09tHe"
+  },
+  {
+    "id": 10,
+    "email": "ilyasabla09@gmail.com",
+    "password": "$2b$10$VGeOU8S9J2E.jCmzzXjNb.8utCDxQ1q5RjWxfKUcoljJZZ9mhhvoy"
+  },
+  {
+    "id": 11,
+    "email": "kiko@kiko.kiko",
+    "password": "$2b$10$Zsq3CiMm8odkjBDdSmexCucSP35Gd76s94rLcrtJJp3kxpAcHygN6"
   }
 ]
