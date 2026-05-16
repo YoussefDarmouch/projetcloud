@@ -7,6 +7,23 @@ if (!localStorage.getItem('token')) {
     window.location.href = '../login.html';
 }
 
+// Helper function for authenticated requests
+function fetchWithAuth(url, options = {}) {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        throw new Error('Token manquant. Veuillez vous connecter.');
+    }
+
+    return fetch(url, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            ...options.headers
+        }
+    });
+}
+
 
 // =====================
 // GET ALL
@@ -96,9 +113,14 @@ function searchReservations() {
 // =====================
 async function removeReservation(id) {
 
-    await fetch(`${RESERVATION_URL}/reservations/${id}`, {
+    const res = await fetchWithAuth(`${RESERVATION_URL}/reservations/${id}`, {
         method: "DELETE"
     });
+
+    if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error || error.message || 'Erreur suppression reservation');
+    }
 
     getReservations();
 }
@@ -109,16 +131,17 @@ async function removeReservation(id) {
 // =====================
 async function addReservation(data) {
 
-    await fetch(`${RESERVATION_URL}/reservations`, {
+    const res = await fetchWithAuth(`${RESERVATION_URL}/reservations`, {
 
         method: "POST",
 
-        headers: {
-            "Content-Type": "application/json"
-        },
-
         body: JSON.stringify(data)
     });
+
+    if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error || error.message || 'Erreur ajout reservation');
+    }
 }
 
 
@@ -127,16 +150,17 @@ async function addReservation(data) {
 // =====================
 async function updateReservation(id, data) {
 
-    await fetch(`${RESERVATION_URL}/reservations/${id}`, {
+    const res = await fetchWithAuth(`${RESERVATION_URL}/reservations/${id}`, {
 
         method: "PUT",
 
-        headers: {
-            "Content-Type": "application/json"
-        },
-
         body: JSON.stringify(data)
     });
+
+    if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error || error.message || 'Erreur mise a jour reservation');
+    }
 }
 
 
@@ -189,35 +213,40 @@ if (form) {
 
         e.preventDefault();
 
-        const data = {
+        try {
+            const data = {
 
-            supporter: document.getElementById('supporter').value,
+                supporter: document.getElementById('supporter').value,
 
-            match: document.getElementById('match').value,
+                match: document.getElementById('match').value,
 
-            tickets: document.getElementById('tickets').value,
+                tickets: document.getElementById('tickets').value,
 
-            category: document.getElementById('category').value,
+                category: document.getElementById('category').value,
 
-            reservationDate: document.getElementById('reservationDate').value
-        };
+                reservationDate: document.getElementById('reservationDate').value
+            };
 
 
-        // UPDATE
-        if (id) {
+            // UPDATE
+            if (id) {
 
-            await updateReservation(id, data);
+                await updateReservation(id, data);
+            }
+
+            // ADD
+            else {
+
+                await addReservation(data);
+            }
+
+
+            // REDIRECT
+            window.location.href = "reservations.html";
+        } catch (error) {
+            console.error('Erreur sauvegarde reservation:', error);
+            alert(error.message || 'Une erreur est survenue.');
         }
-
-        // ADD
-        else {
-
-            await addReservation(data);
-        }
-
-
-        // REDIRECT
-        window.location.href = "reservations.html";
     });
 }
 
