@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "nom": "Marc-André ter Stegen",
-    "age": 33,
-    "position": "Gardien",
-    "club": "FC Barcelona",
-    "nationalite": "Allemagne",
-    "numero": 1,
-    "buts": 0
-  },
-  {
     "id": 2,
     "nom": "Ronald Araújo",
     "age": 26,
@@ -18,36 +8,6 @@
     "nationalite": "Uruguay",
     "numero": 4,
     "buts": 3
-  },
-  {
-    "id": 3,
-    "nom": "Jules Koundé",
-    "age": 26,
-    "position": "Défenseur",
-    "club": "FC Barcelona",
-    "nationalite": "France",
-    "numero": 23,
-    "buts": 2
-  },
-  {
-    "id": 4,
-    "nom": "Alejandro Balde",
-    "age": 21,
-    "position": "Défenseur",
-    "club": "FC Barcelona",
-    "nationalite": "Espagne",
-    "numero": 3,
-    "buts": 1
-  },
-  {
-    "id": 5,
-    "nom": "Andreas Christensen",
-    "age": 29,
-    "position": "Défenseur",
-    "club": "FC Barcelona",
-    "nationalite": "Danemark",
-    "numero": 15,
-    "buts": 1
   },
   {
     "id": 6,
@@ -150,16 +110,6 @@
     "buts": 2
   },
   {
-    "id": 1,
-    "nom": "Thibaut Courtois",
-    "age": 33,
-    "position": "Gardien",
-    "club": "Real Madrid",
-    "nationalite": "Belgique",
-    "numero": 1,
-    "buts": 0
-  },
-  {
     "id": 2,
     "nom": "Dani Carvajal",
     "age": 33,
@@ -168,36 +118,6 @@
     "nationalite": "Espagne",
     "numero": 2,
     "buts": 2
-  },
-  {
-    "id": 3,
-    "nom": "Antonio Rüdiger",
-    "age": 33,
-    "position": "Défenseur",
-    "club": "Real Madrid",
-    "nationalite": "Allemagne",
-    "numero": 22,
-    "buts": 3
-  },
-  {
-    "id": 4,
-    "nom": "David Alaba",
-    "age": 34,
-    "position": "Défenseur",
-    "club": "Real Madrid",
-    "nationalite": "Autriche",
-    "numero": 4,
-    "buts": 1
-  },
-  {
-    "id": 5,
-    "nom": "Ferland Mendy",
-    "age": 30,
-    "position": "Défenseur",
-    "club": "Real Madrid",
-    "nationalite": "France",
-    "numero": 23,
-    "buts": 1
   },
   {
     "id": 6,
@@ -300,16 +220,6 @@
     "buts": 5
   },
   {
-    "id": 1,
-    "nom": "Anas Zniti",
-    "age": 37,
-    "position": "Gardien",
-    "club": "Raja Club Athletic",
-    "nationalite": "Maroc",
-    "numero": 1,
-    "buts": 0
-  },
-  {
     "id": 2,
     "nom": "Abdelilah Madkour",
     "age": 29,
@@ -318,36 +228,6 @@
     "nationalite": "Maroc",
     "numero": 3,
     "buts": 2
-  },
-  {
-    "id": 3,
-    "nom": "Jamal Harkass",
-    "age": 30,
-    "position": "Défenseur",
-    "club": "Raja Club Athletic",
-    "nationalite": "Maroc",
-    "numero": 6,
-    "buts": 3
-  },
-  {
-    "id": 4,
-    "nom": "Mohamed Boulacsoute",
-    "age": 27,
-    "position": "Défenseur",
-    "club": "Raja Club Athletic",
-    "nationalite": "Maroc",
-    "numero": 24,
-    "buts": 1
-  },
-  {
-    "id": 5,
-    "nom": "Yousri Bouzok",
-    "age": 29,
-    "position": "Attaquant",
-    "club": "Raja Club Athletic",
-    "nationalite": "Algérie",
-    "numero": 26,
-    "buts": 14
   },
   {
     "id": 6,
@@ -448,5 +328,14 @@
     "nationalite": "Maroc",
     "numero": 10,
     "buts": 20
+  },
+  {
+    "id": 46,
+    "nom": "mm",
+    "age": "12",
+    "position": "2",
+    "club": "fg",
+    "numero": "23",
+    "nationalite": "f"
   }
 ]

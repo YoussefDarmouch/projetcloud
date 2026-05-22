@@ -1,10 +1,26 @@
 [
   {
     "id": 1,
-    "supporter": "addsa",
+    "supporter": "add",
     "match": "FC Barcelona vs Real Madrid",
-    "tickets": "2",
+    "tickets": "2334",
     "category": "Normal",
     "reservationDate": "2026-05-31"
+  },
+  {
+    "id": 2,
+    "supporter": "addsa",
+    "match": "FC Barcelona vs Real Madrid",
+    "tickets": "22",
+    "category": "VIP",
+    "reservationDate": "2026-05-20"
+  },
+  {
+    "id": 3,
+    "supporter": "hh",
+    "match": "FC Barcelona vs Real Madrid",
+    "tickets": "234",
+    "category": "VIP",
+    "reservationDate": "2026-05-30"
   }
 ]

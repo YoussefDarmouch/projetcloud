@@ -63,10 +63,15 @@ app.post("/match", (req, res) => {
 
 function updateMatch(id, match) {
     const Matchs = getAllMatches();
+
     const index = Matchs.findIndex(m => m.id == id);
-    if (index === -1) return null;
-    Matchs[index] = { ...Matchs[index], ...match };
+
+    if (index === -1)
+        return null;
+    Matchs[index] =
+        { ...Matchs[index], ...match };
     fs.writeFileSync(filePath, JSON.stringify(Matchs, null, 2));
+
     return Matchs[index];
 }
 

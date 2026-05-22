@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { json } = require("stream/consumers");
+
 const express = require("express");
 const verifyToken = require("../../middleware/verifyToken");
 const app = express();
@@ -20,8 +20,10 @@ app.use((req, res, next) => {
 });
 
 app.use('/joueurs', verifyToken);
+// any request ghda l route ghs tdoz verifyToken
 
 const filePath = path.join(__dirname, "../../data/joueurs.json");
+
 // get all data logic 
 function getAllJoueurs() {
     const data = fs.readFileSync(filePath);

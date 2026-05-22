@@ -197,7 +197,7 @@ async function saveClassement() {
         });
 
         // Une fois sauvegardé, on redirige l'utilisateur vers le tableau
-        window.location.href = "classement.html";
+        window.location.href = "classmants.html";
     } catch (error) {
         console.error("Erreur lors de la sauvegarde:", error);
         alert("Erreur lors de la sauvegarde !");

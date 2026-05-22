@@ -10,13 +10,13 @@
     "bp": 70,
     "bc": 22,
     "diff": 48,
-    "pts": 83,
+    "pts": 8,
     "championnat": "La Liga"
   },
   {
     "id": 2,
     "rang": 2,
-    "equipe": "Real Madrid",
+    "equipe": "Real Madrii",
     "mj": 34,
     "g": 24,
     "n": 6,
@@ -39,20 +39,6 @@
     "bc": 15,
     "diff": 37,
     "pts": 72,
-    "championnat": "Botola Pro"
-  },
-  {
-    "id": 4,
-    "rang": 2,
-    "equipe": "AS FAR",
-    "mj": 30,
-    "g": 22,
-    "n": 5,
-    "p": 3,
-    "bp": 65,
-    "bc": 22,
-    "diff": 43,
-    "pts": 71,
     "championnat": "Botola Pro"
   },
   {
@@ -82,5 +68,15 @@
     "diff": 25,
     "pts": 67,
     "championnat": "La Liga"
+  },
+  {
+    "id": 7,
+    "email": "ii",
+    "password": "ii"
+  },
+  {
+    "id": 8,
+    "email": "ii",
+    "password": "ii"
   }
 ]
