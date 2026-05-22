@@ -1,12 +1,12 @@
 // L'URL de votre API Classement (Port 3003)
 const API_URL = "http://localhost:3003/classements";
 
-// Check if user is logged in
+// Vérifier si l'utilisateur est connecté
 if (!localStorage.getItem('token')) {
     window.location.href = '../login.html';
 }
 
-// Helper function for authenticated requests
+// Fonction d'aide pour les requêtes authentifiées
 function fetchWithAuth(url, options = {}) {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -23,7 +23,7 @@ function fetchWithAuth(url, options = {}) {
 }
 
 // ==========================================
-// LOGIQUE DU DASHBOARD (classement.html)
+// LOGIQUE DU DASHBOARD (classmants.html)
 // ==========================================
 
 // 1. Charger tous les classements
@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadStats();
 });
 // 2. Afficher les données dans le tableau HTML
-// Remplacez votre fonction renderTable par celle-ci
 function renderTable(classements) {
     const tbody = document.getElementById("list");
     if (!tbody) return;
@@ -75,8 +74,8 @@ function renderTable(classements) {
                 <td>${c.diff}</td>
                 <td><strong>${c.pts}</strong></td>
                 <td>
-                    <button onclick="editClassement(${c.id})">✏️ Edit</button>
-                    <button onclick="deleteClassement(${c.id})" style="background-color: #ff4c4c; color: white;">Delete</button>
+                    <button onclick="editClassement(${c.id})">✏️ Modifier</button>
+                    <button onclick="deleteClassement(${c.id})" style="background-color: #ff4c4c; color: white;">Supprimer</button>
                 </td>
             </tr>
         `;

@@ -1,19 +1,5 @@
 [
   {
-    "id": 1,
-    "rang": 1,
-    "equipe": "FC Barcelona",
-    "mj": 34,
-    "g": 26,
-    "n": 5,
-    "p": 3,
-    "bp": 70,
-    "bc": 22,
-    "diff": 48,
-    "pts": 8,
-    "championnat": "La Liga"
-  },
-  {
     "id": 2,
     "rang": 2,
     "equipe": "Real Madrii",
@@ -24,7 +10,7 @@
     "bp": 68,
     "bc": 25,
     "diff": 43,
-    "pts": 78,
+    "pts": 80,
     "championnat": "La Liga"
   },
   {
@@ -68,15 +54,5 @@
     "diff": 25,
     "pts": 67,
     "championnat": "La Liga"
-  },
-  {
-    "id": 7,
-    "email": "ii",
-    "password": "ii"
-  },
-  {
-    "id": 8,
-    "email": "ii",
-    "password": "ii"
   }
 ]

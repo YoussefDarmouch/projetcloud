@@ -43,20 +43,5 @@
     "id": 9,
     "email": "test@gmail.com",
     "password": "$2b$10$sFDgcbwTeOaGWzf8AuxO/uq4RAE2Fl54wFTCOppb5pBIz6gq09tHe"
-  },
-  {
-    "id": 10,
-    "email": "ab",
-    "password": "$2b$10$ZX.6Z8tXt7hhLKbs8/xiwOnEgvzlqjjkNKjKlXVFxISv6f10aeQfO"
-  },
-  {
-    "id": 11,
-    "email": "ee",
-    "password": "$2b$10$eNWn3ah4lbpROp7IHuPOMu0zXdDby9qlf0nqdzTsIRYCKvBugXxgO"
-  },
-  {
-    "id": 12,
-    "email": "ii",
-    "password": "$2b$10$/U.O2uXREYxvMShgPJdviupTrVmsvKR8yekmxDW9BbfhvVgD2Hd1S"
   }
 ]

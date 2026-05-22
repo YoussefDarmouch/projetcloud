@@ -1,11 +1,14 @@
+// Importer les modules nécessaires
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const verifyToken = require("../../middleware/verifyToken");
 const app = express();
 
+// Charger les variables d'environnement
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
+// Middleware pour parser les corps de requête JSON
 app.use(express.json());
 
 // Configuration CORS
@@ -16,40 +19,40 @@ app.use((req, res, next) => {
     if (req.method === 'OPTIONS') {
         return res.sendStatus(200);
     }
-    next();
+    next(); 
 });
 
+// Middleware pour vérifier le token pour toutes les routes /classements
 app.use('/classements', verifyToken);
 
-// Chemin vers le fichier JSON du classement
+// Chemin vers le fichier JSON des classements
 const filePath = path.join(__dirname, "../../data/classmant.json");
 
 // ==========================================
-// Hadi function bach njibou ga3 tarteeb dial lfra9i w nchoufou chkoun lawel
+// Cette fonction permet d'obtenir le classement complet des équipes et de voir qui est premier
 // ==========================================
 function getAllClassements() {
-    // Kan9raw data men lfile w kanrej3ouha 3la chkel objet JSON
+    // On lit les données du fichier et on les retourne en tant qu'objet JSON
     const data = fs.readFileSync(filePath, "utf-8");
     return JSON.parse(data);
 }
 
-// API: Get all classements
+// API : Obtenir tous les classements
 app.get("/classements", (req, res) => {
     const classements = getAllClassements();
     res.json(classements);
 });
 
-
 // ==========================================
-// Hadi function bach n9elbou 3la tarteeb dial fer9a wehda bel ID dialha
+// Cette fonction permet de rechercher le classement d'une seule équipe par son ID
 // ==========================================
 function getClassementById(id) {
     const classements = getAllClassements();
-    // Kan9elbou 3la lfer9a li 3ndha nefs l'ID
+    // On recherche l'équipe qui a le même ID
     return classements.find(c => c.id == id);
 }
 
-// API: Get classement by ID
+// API : Obtenir le classement par ID
 app.get("/classements/:id", (req, res) => {
     const classement = getClassementById(req.params.id);
 
@@ -62,46 +65,44 @@ app.get("/classements/:id", (req, res) => {
     res.json(classement);
 });
 
-
 // ==========================================
-// Hadi function bach nzido fer9a jdida f tarteeb w nsejjlouha f lfile
+// Cette fonction permet d'ajouter une nouvelle équipe au classement et de l'enregistrer dans le fichier
 // ==========================================
 function addClassement(nouveauClassement) {
     const classements = getAllClassements();
 
-    // Kaneswbo objet jdid fih id jdid w les infos li jawna
+    // On crée un nouvel objet avec un nouvel id et les informations reçues
     const newEntry = {
         id: classements.length > 0 ? Math.max(...classements.map(c => c.id || 0)) + 1 : 1,
         ...nouveauClassement
     };
 
     classements.push(newEntry);
-    // Kanketbou data jdida f lfile
+    // On écrit les nouvelles données dans le fichier
     fs.writeFileSync(filePath, JSON.stringify(classements, null, 2));
 
     return newEntry;
 }
 
-// API: Add new classement entry
+// API : Ajouter une nouvelle entrée de classement
 app.post("/classements", (req, res) => {
     const classement = addClassement(req.body);
     res.status(201).json(classement);
 });
 
-
 // ==========================================
-// Hadi function bach nbedlou les points (pts) wla les stats (mj, bp, bc) dial chi fer9a
+// Cette fonction permet de modifier les points (pts) ou les statistiques (mj, bp, bc) d'une équipe
 // ==========================================
 function updateClassement(id, donneesMisesAJour) {
     const classements = getAllClassements();
     const index = classements.findIndex(c => c.id == id);
 
-    // Ila mal9inach lfer9a, kanrej3ou null
+    // Si on ne trouve pas l'équipe, on retourne null
     if (index === -1) {
         return null;
     }
 
-    // Kanbedlou ghir les infos li tbdelou w kankhliw lakhrin kima homa
+    // On ne modifie que les informations qui ont changé et on laisse les autres telles quelles
     classements[index] = {
         ...classements[index],
         ...donneesMisesAJour
@@ -111,7 +112,7 @@ function updateClassement(id, donneesMisesAJour) {
     return classements[index];
 }
 
-// API: Update classement
+// API : Mettre à jour le classement
 app.put("/classements/:id", (req, res) => {
     const classement = updateClassement(req.params.id, req.body);
 
@@ -124,32 +125,30 @@ app.put("/classements/:id", (req, res) => {
     res.json(classement);
 });
 
-
 // ==========================================
-// Hadi function bach nms7ou chi fer9a men tarteeb b mara
+// Cette fonction permet de supprimer complètement une équipe du classement
 // ==========================================
 function removeClassement(id) {
     let classements = getAllClassements();
 
-    // Kanfiltriw tableau bach nkhliw ga3 lfra9i mn ghir hadik li bghina nms7ou
+    // On filtre le tableau pour garder toutes les équipes sauf celle qu'on veut supprimer
     const initialLength = classements.length;
     classements = classements.filter(c => c.id != id);
 
-    // Kansejjlou lfile jdida
+    // On enregistre le nouveau fichier
     fs.writeFileSync(filePath, JSON.stringify(classements, null, 2));
 
-    // Kanrejcou tableau jdid
+    // On retourne le nouveau tableau
     return classements;
 }
 
-// API: Remove classement
+// API : Supprimer le classement
 app.delete("/classements/:id", (req, res) => {
     const resultats = removeClassement(req.params.id);
     res.json({ message: "Équipe supprimée du classement", data: resultats });
 });
 
-
-// Export des fonctions pour pouvoir les utiliser ailleurs si besoin
+// Exporter les fonctions pour pouvoir les utiliser ailleurs si besoin
 module.exports = {
     getAllClassements,
     getClassementById,
@@ -158,7 +157,7 @@ module.exports = {
     removeClassement
 };
 
-// Lancement du serveur sur le port 3003
+// Démarrer le serveur sur le port 3003
 app.listen(3003, () => {
     console.log("Classement Service running on port 3003");
 });
