@@ -136,6 +136,8 @@ module.exports = {
 };
 
 // Démarrer le serveur
-app.listen(3004, () => {
-    console.log("Equipes Service running on port 3004");
+const PORT = process.env.PORT || 3004;
+
+app.listen(PORT, () => {
+    console.log(`Equipes Service running on port ${PORT}`);
 });

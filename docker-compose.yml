@@ -1,0 +1,114 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: football-web
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+    depends_on:
+      - auth-service
+      - joueur-service
+      - classemants-service
+      - equipes-service
+      - reservation-service
+      - match-service
+    networks:
+      - football-net
+    restart: unless-stopped
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: services/auth-service/Dockerfile
+    container_name: auth-service
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - football-net
+    restart: unless-stopped
+
+  joueur-service:
+    build:
+      context: .
+      dockerfile: services/joueur-service/Dockerfile
+    container_name: joueur-service
+    ports:
+      - "3002:3002"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - football-net
+    restart: unless-stopped
+
+  classemants-service:
+    build:
+      context: .
+      dockerfile: services/classemants-service/Dockerfile
+    container_name: classemants-service
+    ports:
+      - "3003:3003"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - football-net
+    restart: unless-stopped
+
+  equipes-service:
+    build:
+      context: .
+      dockerfile: services/equipes-service/Dockerfile
+    container_name: equipes-service
+    ports:
+      - "3004:3004"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - football-net
+    restart: unless-stopped
+
+  reservation-service:
+    build:
+      context: .
+      dockerfile: services/reservation-service/Dockerfile
+    container_name: reservation-service
+    ports:
+      - "3005:3005"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - football-net
+    restart: unless-stopped
+
+  match-service:
+    build:
+      context: .
+      dockerfile: services/match-service/Dockerfile
+    container_name: match-service
+    ports:
+      - "3006:3006"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - football-net
+    restart: unless-stopped
+
+networks:
+  football-net:
+    driver: bridge

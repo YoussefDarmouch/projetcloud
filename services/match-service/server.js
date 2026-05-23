@@ -119,6 +119,8 @@ module.exports = {
 }
 
 // Démarrer le serveur
-app.listen(3006, () => {
-    console.log("Match service running on port 3006");
+const PORT = process.env.PORT || 3006;
+
+app.listen(PORT, () => {
+    console.log(`Match service running on port ${PORT}`);
 });

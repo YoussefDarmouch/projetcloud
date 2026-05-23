@@ -158,6 +158,8 @@ module.exports = {
 };
 
 // Démarrer le serveur sur le port 3003
-app.listen(3003, () => {
-    console.log("Classement Service running on port 3003");
+const PORT = process.env.PORT || 3003;
+
+app.listen(PORT, () => {
+    console.log(`Classement Service running on port ${PORT}`);
 });

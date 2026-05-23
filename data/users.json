@@ -43,5 +43,10 @@
     "id": 9,
     "email": "test@gmail.com",
     "password": "$2b$10$sFDgcbwTeOaGWzf8AuxO/uq4RAE2Fl54wFTCOppb5pBIz6gq09tHe"
+  },
+  {
+    "id": 10,
+    "email": "sarah.benali@clinic.com",
+    "password": "$2b$10$KbAw48MCxUPwhPO7VnUWg.73CItMikMnDULHSH1iR1EnAy0B8Rbsa"
   }
 ]

@@ -2,7 +2,7 @@
   "name": "cloudapirest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node api.js",
@@ -10,8 +10,9 @@
     "start:joueur": "node services/joueur-service/server.js",
     "start:classmants": "node services/classemants-service/server.js",
     "start:equipes": "node services/equipes-service/server.js",
-    "start:match": "nodemon services/match-service/server.js",
-    "start:all": "concurrently \"npm run start\" \"npm run start:auth\" \"npm run start:joueur\" \"npm run start:classmants\" \"npm run start:equipes\" \"npm run dev:reservation\"\"npm run dev:match\"",
+    "start:reservation": "node services/reservation-service/server.js",
+    "start:match": "node services/match-service/server.js",
+    "start:all": "concurrently \"npm run start\" \"npm run start:auth\" \"npm run start:joueur\" \"npm run start:classmants\" \"npm run start:equipes\" \"npm run start:reservation\" \"npm run start:match\"",
     "dev": "nodemon api.js",
     "dev:auth": "nodemon services/auth-service/server.js",
     "dev:joueur": "nodemon services/joueur-service/server.js",
@@ -19,7 +20,7 @@
     "dev:equipes": "nodemon services/equipes-service/server.js",
     "dev:reservation": "nodemon services/reservation-service/server.js",
     "dev:match": "nodemon services/match-service/server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run dev:auth\" \"npm run dev:joueur\" \"npm run dev:classmants\" \"npm run dev:equipes\"  \"npm run dev:reservation\" \"npm run dev:match\""
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:auth\" \"npm run dev:joueur\" \"npm run dev:classmants\" \"npm run dev:equipes\" \"npm run dev:reservation\" \"npm run dev:match\""
   },
   "keywords": [],
   "author": "",

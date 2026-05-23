@@ -131,7 +131,7 @@ app.post('/auth/login', async (req, res) => {
   }
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Démarrer le serveur
 app.listen(PORT, () => {

@@ -248,4 +248,3 @@ if (document.getElementById('list')) {
 
     getJoueurs();
 }
-

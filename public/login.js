@@ -1,5 +1,4 @@
 const AUTH_URL = 'http://localhost:3001';
-const Joueur_URL = 'http://localhost:3002';
 
 function showMessage(text, type) {
     const div = document.getElementById('message');

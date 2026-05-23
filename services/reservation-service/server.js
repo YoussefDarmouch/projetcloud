@@ -133,6 +133,8 @@ module.exports = {
 };
 
 // Démarrer le serveur
-app.listen(3005, () => {
-    console.log("Reservation Service running on port 3005");
+const PORT = process.env.PORT || 3005;
+
+app.listen(PORT, () => {
+    console.log(`Reservation Service running on port ${PORT}`);
 });
